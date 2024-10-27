@@ -3,119 +3,96 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Liens</title>
+    <title>Page avec fond IA</title>
     <style>
-        /* Variables pour le thème sombre */
         :root {
-            --bg-color: #121212;
-            --button-bg: #2d2d2d;
-            --button-hover: #3d3d3d;
+            --bg-overlay: rgba(0, 0, 0, 0.7);
             --text-color: #ffffff;
-            --accent-color: #BB86FC;
         }
 
-        /* Styles de base */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', system-ui, sans-serif;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
             min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-color);
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        /* Container pour les boutons */
-        .button-container {
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 500px;
+            height: 100%;
+            z-index: -1;
+            background-image: url('votre-image-ia.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-overlay);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .button-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
         }
 
-        /* Style des boutons */
         .button-link {
             display: block;
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            padding: 16px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 16px 24px;
             border-radius: 12px;
             text-decoration: none;
-            text-align: center;
+            color: var(--text-color);
             font-weight: 500;
-            font-size: 1.1rem;
+            text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .button-link:hover, .button-link:focus {
-            background-color: var(--button-hover);
+        .button-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .button-link:active {
-            transform: translateY(0);
-        }
-
-        /* Animation de pulsation pour l'accent */
-        .button-link.accent {
-            background-color: var(--accent-color);
-            color: #000000;
-        }
-
-        /* Media queries pour les petits écrans */
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .button-link {
-                font-size: 1rem;
-                padding: 14px 16px;
-            }
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <h1>Mes Liens Utiles</h1>
-    
-    <div class="button-container">
-        <!-- Bouton accent (mis en évidence) -->
-        <a href="https://exemple1.com" class="button-link accent" target="_blank">
-            Lien Principal
-        </a>
+    <div class="bg-container">
+        <div class="bg-overlay"></div>
+    </div>
 
-        <!-- Boutons standards -->
-        <a href="https://exemple2.com" class="button-link" target="_blank">
-            Deuxième Lien
-        </a>
-
-        <a href="https://exemple3.com" class="button-link" target="_blank">
-            Troisième Lien
-        </a>
-
-        <a href="https://exemple4.com" class="button-link" target="_blank">
-            Quatrième Lien
-        </a>
-
-        <a href="https://exemple5.com" class="button-link" target="_blank">
-            Cinquième Lien
-        </a>
+    <div class="content">
+        <h1>Mes Liens</h1>
+        
+        <div class="button-container">
+            <a href="#" class="button-link">Premier Lien</a>
+            <a href="#" class="button-link">Deuxième Lien</a>
+            <a href="#" class="button-link">Troisième Lien</a>
+            <a href="#" class="button-link">Quatrième Lien</a>
+        </div>
     </div>
 </body>
 </html>
