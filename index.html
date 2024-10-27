@@ -3,114 +3,117 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Liens</title>
+    <title>Boutons 3D</title>
     <style>
-        /* Variables pour le thème sombre */
         :root {
             --bg-color: #121212;
-            --button-bg: #2d2d2d;
-            --button-hover: #3d3d3d;
             --text-color: #ffffff;
-            --accent-color: #BB86FC;
         }
 
-        /* Styles de base */
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        /* Container pour les boutons */
         .button-container {
-            width: 100%;
-            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
+            max-width: 500px;
+            width: 100%;
         }
 
-        /* Style des boutons */
-        .button-link {
-            display: block;
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            padding: 16px 20px;
+        .button-3d {
+            position: relative;
+            padding: 16px 24px;
+            border: none;
             border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
             text-decoration: none;
             text-align: center;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.03s linear;
         }
 
-        .button-link:hover, .button-link:focus {
-            background-color: var(--button-hover);
+        .button-red {
+            background: #ff3366;
+            box-shadow: 0 8px 0 #cc0033;
+            color: white;
+        }
+
+        .button-blue {
+            background: #3498db;
+            box-shadow: 0 8px 0 #2980b9;
+            color: white;
+        }
+
+        .button-green {
+            background: #2ecc71;
+            box-shadow: 0 8px 0 #27ae60;
+            color: white;
+        }
+
+        .button-purple {
+            background: #9b59b6;
+            box-shadow: 0 8px 0 #8e44ad;
+            color: white;
+        }
+
+        .button-3d:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .button-link:active {
-            transform: translateY(0);
+        .button-3d:active {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 currentColor;
         }
 
-        /* Animation de pulsation pour l'accent */
-        .button-link.accent {
-            background-color: var(--accent-color);
-            color: #000000;
+        .button-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+            pointer-events: none;
         }
 
-        /* Media queries pour les petits écrans */
         @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .button-link {
+            .button-3d {
+                padding: 14px 20px;
                 font-size: 1rem;
-                padding: 14px 16px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Mes Liens Utiles</h1>
+    <h1>Mes Liens</h1>
     
     <div class="button-container">
-        <!-- Bouton accent (mis en évidence) -->
-        <a href="https://strene76.github.io/ma-liste-de-taches/" class="button-link" target="_blank">
-            Ma Liste des Tâches
+        <a href="#" class="button-3d button-red">
+            Premier Lien
         </a>
 
-        <!-- Boutons standards -->
-        <a href="https://strene76.github.io/bitcoin/" class="button-link" target="_blank">
-            Bitcoin / Ethereum
+        <a href="#" class="button-3d button-blue">
+            Deuxième Lien
         </a>
 
-        <a href="https://strene76.github.io/reveil-des-gars/" class="button-link" target="_blank">
-            Réveil des gars
+        <a href="#" class="button-3d button-green">
+            Troisième Lien
         </a>
 
-        <a href="https://strene76.github.io/covoiturage-U15" class="button-link" target="_blank">
-            Covoiturage U15
+        <a href="#" class="button-3d button-purple">
+            Quatrième Lien
         </a>
     </div>
 </body>
