@@ -1,8 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mes liens</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Interface</title>
+    <style>
+        /* Mode sombre par défaut */
+        :root {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --accent-color: #BB86FC;
+            --surface-color: #1E1E1E;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 16px;
+        }
+
+        .card {
+            background: var(--surface-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .button {
+            background: var(--accent-color);
+            border: none;
+            border-radius: 24px;
+            color: black;
+            padding: 12px 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Mes liens utiles</h1>
